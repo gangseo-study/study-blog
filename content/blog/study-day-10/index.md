@@ -1,7 +1,7 @@
 ---
-title: Study Day 10 **Filter**, Security, OAuth2
+title: Study Day 10 Filter, Security, OAuth2
 date: "2023-04-22"
-description: "**Filter**, Security, OAuth2"
+description: "Filter, Security, OAuth2"
 ---
 
 
@@ -69,21 +69,24 @@ public class AppConfig {
 Interceptor와 **Filter**는 모두 Spring MVC에서 요청 처리를 가로채고 처리할 수 있는 기능을 제공하는데,  
 기능적으로 비슷한 역할을 한다.
 
-![](./img/image.png) 
-하지만 Interceptor는 **컨트롤러에 진입하기 전, 후**에 추가적인 작업을 수행하는 반면,  
-**Filter**는 **DispatcherServlet에서 처리하기 전, 후**에 요청과 응답에 대한 필터링 작업을 수행한다.
 
 또한 Interceptor는 HandlerInterceptor 인터페이스를 구현하고,  
 preHandle, postHandle, afterCompletion 메서드를 제공하여  
 각각 컨트롤러에 진입하기 전, 후, 완료 후에 수행할 작업을 구현할 수 있다.
 
 ![](./img/image1.png) 
-반면, **Filter**는 Servlet Filter 인터페이스를 구현하고  
+**Filter**는 Servlet Filter 인터페이스를 구현하고  
 doFilter 메서드를 구현하여 요청 및 응답을 가로채고 처리한다.  
-**Filter**는 Interceptor와 달리 컨트롤러에 진입하기 전에도 수행할 수 있으므로,  로깅, 인증, 인코딩 변경 등 다양한 작업을 수행할 수 있다.
+**Filter**는 Interceptor와 달리 컨트롤러에 진입하기 전에도 수행할 수 있으므로,  
+로깅, 인증, 인코딩 변경 등 다양한 작업을 수행할 수 있다.
 
-따라서, Interceptor와 **Filter**는 목적이나 사용처에 따라 선택하여 사용할 수 있다.
+![](./img/image.png) 
+하지만 Interceptor는 **컨트롤러에 진입하기 전, 후**에 추가적인 작업을 수행하는 반면,  
+**Filter**는 **DispatcherServlet에서 처리하기 전, 후**에 요청과 응답에 대한 필터링 작업을 수행한다.
+
+
 ![](./img/image2.png) 
+따라서, **Filter**와 Interceptor는 목적이나 사용처에 따라 선택하여 사용할 수 있다.
 
 ### Security Filter?
 
